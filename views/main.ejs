@@ -1,0 +1,86 @@
+<html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <style>
+    #searchText {
+        margin-right: 10px;
+      }
+  </style>
+</head>
+<body>
+      <div class="container text-center">
+        <h3>Nightlife Cordination App</h3>
+        <p>Created by Nathan O'Neel for Freecodecamp.com</p>
+      </div>
+      <br>
+      <div id="search" class="container text-center">
+        <form action="/search" method="post" class="center-block">
+          <h4>Search your city for bars near you!</h4>
+          <fieldset class="form-group">
+            <input id="searchText" class="from-control" name="search"/>
+            <input id="submit" class="btn btn-secondary" type="submit" value="Search" />
+          </fieldset>
+        </form>
+      </div>
+      <div id="results" class="container center-block text-center">
+      </div>
+      <br>
+      <br>
+      <div class="container">
+        <div class="row">
+          <!-- LOCAL INFORMATION -->
+          <div class="col-sm-4">
+            <div class="well">
+              <h3><span class="fa fa-user"></span> Local</h3>
+
+              <% if (user.local.email) { %>
+                <p><strong>email</strong>:
+                  <%= user.local.email %><br></p>
+                <a href="/unlink/local" class="btn btn-default">Unlink</a>
+                <% } else { %>
+                  <a href="/connect/local" class="btn btn-default">Connect Local</a>
+                  <% } %>
+            </div>
+          </div>
+          <!-- FACEBOOK INFORMATION -->
+          <div class="col-sm-4">
+            <div class="well">
+              <h3 class="text-primary"><span class="fa fa-facebook"></span> Facebook</h3>
+              <!-- check if the user has this token (is the user authenticated with this social account) -->
+              <% if (user.facebook.token) { %>
+                <p>
+                  <strong>email</strong>:
+                  <%= user.facebook.email %><br>
+                    <strong>name</strong>:
+                    <%= user.facebook.name %><br>
+                </p>
+                <a href="/unlink/facebook" class="btn btn-primary">Unlink</a>
+                <% } else { %>
+                  <a href="/connect/facebook" class="btn btn-primary">Connect Facebook</a>
+                  <% } %>
+            </div>
+          </div>
+          <!-- TWITTER INFORMATION -->
+          <div class="col-sm-4">
+            <div class="well">
+              <h3 class="text-info"><span class="fa fa-twitter"></span> Twitter</h3>
+              <% if (user.twitter.token) { %>
+                <p>
+                  <strong>display name</strong>:
+                  <%= user.twitter.displayName %><br>
+                    <strong>username</strong>:
+                    <%= user.twitter.username %>
+                </p>
+                <a href="/unlink/twitter" class="btn btn-info">Unlink</a>
+                <% } else { %>
+                  <a href="/connect/twitter" class="btn btn-info">Connect Twitter</a>
+                  <% } %>
+            </div>
+          </div>
+        </div>
+      </div>
+</body>
+</html>

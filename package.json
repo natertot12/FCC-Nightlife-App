@@ -1,0 +1,44 @@
+{
+  "name": "fcc-nightlife-app",
+  "main": "server.js",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.0.2",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.0.1",
+    "ejs": "^0.8.8",
+    "express": "^4.13.4",
+    "express-session": "^1.0.4",
+    "formidable": "^1.0.17",
+    "fs": "0.0.2",
+    "method-override": "~1.0.0",
+    "mongodb": "^2.1.7",
+    "mongoose": "^3.8.39",
+    "morgan": "^1.0.1",
+    "node-schedule": "^1.0.0",
+    "node-yelp": "0.0.3",
+    "passport": "^0.1.18",
+    "passport-facebook": "~1.0.2",
+    "passport-google-oauth": "^0.1.5",
+    "passport-local": "^0.1.6",
+    "passport-twitter": "~1.0.2",
+    "path": "^0.12.7",
+    "util": "^0.10.3"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "version": "1.0.0",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/natertot12/FCC-Nightlife-App.git"
+  },
+  "author": "Nathan O'Neel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/natertot12/FCC-Nightlife-App/issues"
+  },
+  "homepage": "https://github.com/natertot12/FCC-Nightlife-App#readme",
+  "description": ""
+}
